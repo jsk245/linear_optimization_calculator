@@ -33,6 +33,23 @@ This is an example command using these options:
 
 `python calculator.py compare-simplex-speeds 500 1000 100 --print_reps`
 ## Format
+### solve-mip 
+I include 7 examples of files that solve-mip can read in this repo. Here are some general rules to be followed:
+1. Use "obj:" to designate the objective function, "var:" or "intvar:" to introduce variables, and "constraint:" to introduce constraints
+2. After writing the objective function, variable information, or constraint information, type a semicolon
+3. I assume that all objective functions are given in their maximization form. Just multiply by -1 if you have a minimization problem
+4. When introducing a variable using "var:", only write the variable name (like "var: x1;") or the variable name with >= 0 (like "var: x1 >= 0;")
+5. when introducing integral variables, use "intvar:". We assume that all integral variables are greater than or equal to 0.
+6. All constraints must include ">=", "<=", or "=", where the first two cannot have a space before the "=" sign.
+7. Do not use mathematical symbols in variable names other than numbers
+8. Always use the multiplication symbol (\*) in constraints if there is a coefficient in front of a variable
+9. Declare all variables used in the constraints
+10. Don't try to add a negative number, just use subtraction
+11. Don't use paranetheses
+12. If the constraint value is negative, write "-" before the number with no space
+13. Make sure all constraints are written so that all variables are on the left and the value is on the right
+
+## Descriptions of Examples included
 
 ## Potential Sources of Error
-Linear programming and transportation setup problems should be reliably solved using this calculator (or the calculator will return an error if there are no solutions), but problems involving variables that are restricted to integers may lead to some errors. Since integer programming is NP-hard, lots of computation is needed to solve many of these problems, and in this current implementation, there may be memory issues encountered if the tableaus become too large. Another issue is that to test if a value is an integer, I check if the value is within 1e-7 of a whole number, so if the values in these problems are very small, this may lead to incorrect answers. Finally, there may be issues with overflow in general if numbers are too small as solving these types of problems involve division.
+Linear programming and transportation setup problems should be reliably solved using this calculator (or the calculator will return an error if there are no solutions), but problems involving variables that are restricted to integers may lead to some errors. Since integer programming is NP-hard, lots of computation is needed to solve many of these problems, and in this current implementation, there may be memory issues encountered if the tableaus become too large. Another issue is that to test if a value is an integer, I check if the value is within 1e-7 of a whole number, so if the values in these problems are very small, this may lead to incorrect answers. Finally, there may be issues with overflow in general if numbers are too small as solving these types of problems involves division.

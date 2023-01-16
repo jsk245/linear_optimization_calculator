@@ -32,6 +32,7 @@ The compare-simplex-speeds command relates to the first type of problem listed a
 This is an example command using these options:
 
 `python calculator.py compare-simplex-speeds 500 1000 100 --print_reps`
+(Note: this will take probably around 10-15min to complete, but you should find that the vectorized version is almost 2000x faster)
 ## Format
 ### solve-mip 
 I include 7 examples of files that solve-mip can read in this repo. Here are some general rules to be followed:

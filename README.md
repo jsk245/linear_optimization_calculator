@@ -47,7 +47,7 @@ I include 7 examples of files that solve-mip can read in this repo. Here are som
 8. Always use the multiplication symbol (\*) in constraints if there is a coefficient in front of a variable
 9. Declare all variables used in the constraints
 10. Don't try to add a negative number, just use subtraction
-11. Don't use paranetheses
+11. Don't use parentheses
 12. If the constraint value is negative, write "-" before the number with no space
 13. Make sure all constraints are written so that all variables are on the left and the value is on the right
 

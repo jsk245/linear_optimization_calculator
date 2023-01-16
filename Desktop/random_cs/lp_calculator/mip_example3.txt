@@ -1,7 +1,0 @@
-obj: -4 * x - 6 * y;
-
-var: x >= 0;
-var: y >= 0;
-
-constraint:  -x - 3* y <= -5;
-constraint: -2 * x -  y <= -3;

@@ -41,7 +41,7 @@ I include 7 examples of files that solve-mip can read in this repo. Here are som
 2. After writing the objective function, variable information, or constraint information, type a semicolon
 3. I assume that all objective functions are given in their maximization form. Just multiply by -1 if you have a minimization problem
 4. When introducing a variable using "var:", only write the variable name (like "var: x1;") or the variable name with >= 0 (like "var: x1 >= 0;")
-5. when introducing integral variables, use "intvar:". We assume that all integral variables are greater than or equal to 0.
+5. When introducing integral variables, use "intvar:". We assume that all integral variables are greater than or equal to 0.
 6. All constraints must include ">=", "<=", or "=", where the first two cannot have a space before the "=" sign.
 7. Do not use mathematical symbols in variable names other than numbers
 8. Always use the multiplication symbol (\*) in constraints if there is a coefficient in front of a variable
@@ -54,7 +54,7 @@ I include 7 examples of files that solve-mip can read in this repo. Here are som
 ### setup-transport-problem
 I include 1 example of a file that setup-transport-problem can read in this repo. Here are some general rules to be followed:
 1. Use "supply:" to introduce the supply, "demand:" to introduce the demand, and "costs:" to introduce the costs
-2. Sneparate all numbers with a comma and include a semicolon at the end of each of these 3 sections
+2. Separate all numbers with a comma and include a semicolon at the end of each of these 3 sections
 3. If there are n factories, and we view the costs as a matrix as shown in the example file, there should be n columns, each corresponding to one factory
 
 ## Descriptions of Examples included

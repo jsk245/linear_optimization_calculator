@@ -1,0 +1,7 @@
+obj: 2 * x1 + 5 * x2;
+
+var: x1 >= 0;
+var: x2;
+
+constraint: 3 * x1 + 2 * x2 <= 6;
+constraint: 2 * x1 + 9 * x2 <= 8;

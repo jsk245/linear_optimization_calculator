@@ -49,7 +49,21 @@ I include 7 examples of files that solve-mip can read in this repo. Here are som
 12. If the constraint value is negative, write "-" before the number with no space
 13. Make sure all constraints are written so that all variables are on the left and the value is on the right
 
+### setup-transport-problem
+I include 1 example of a file that setup-transport-problem can read in this repo. Here are some general rules to be followed:
+1. Use "supply:" to introduce the supply, "demand:" to introduce the demand, and "costs:" to introduce the costs
+2. Sneparate all numbers with a comma and include a semicolon at the end of each of these 3 sections
+3. If there are n factories, and we view the costs as a matrix as shown in the example file, there should be n columns, each corresponding to one factory
+
 ## Descriptions of Examples included
+1. mip_example1.txt - a generic lp problem
+2. mip_example2.txt - an lp problem with an unbounded solution
+3. mip_example3.txt - an lp problem with a negative constraint value 
+4. mip_example4.txt - a pure integer problem
+5. mip_example5.txt - a mixed integer problem
+6. mip_example6.txt - an lp problem using the ">=", "<=", and "=" signs in the constraints
+7. mip_example7.txt - an lp problem with an unbounded variable
+8. transportation_example.txt - a generic transportation setup problem
 
 ## Potential Sources of Error
 Linear programming and transportation setup problems should be reliably solved using this calculator (or the calculator will return an error if there are no solutions), but problems involving variables that are restricted to integers may lead to some errors. Since integer programming is NP-hard, lots of computation is needed to solve many of these problems, and in this current implementation, there may be memory issues encountered if the tableaus become too large. Another issue is that to test if a value is an integer, I check if the value is within 1e-7 of a whole number, so if the values in these problems are very small, this may lead to incorrect answers. Finally, there may be issues with overflow in general if numbers are too small as solving these types of problems involves division.

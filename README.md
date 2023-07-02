@@ -2,8 +2,8 @@
 ## Description
 This is a command-line tool that allows the user to solve a couple different problems related to linear optimization. It can:
 1. Solve linear programming (lp) problems
-2. Solve pure integer programming problems
-3. Solve mixed integer programming problems
+2. Solve pure integer programming problems (see potential sources of error below)
+3. Solve mixed integer programming problems (see potential sources of error below)
 4. Setup a table for transportation problems
 ## Commands
 ### solve-mip
@@ -68,4 +68,4 @@ I include 1 example of a file that setup-transport-problem can read in this repo
 8. transportation_example.txt - a generic transportation setup problem
 
 ## Potential Sources of Error
-Linear programming and transportation setup problems should be reliably solved using this calculator (or the calculator will return an error if there are no solutions), but problems involving variables that are restricted to integers may lead to some errors. Since integer programming is NP-hard, lots of computation is needed to solve many of these problems, and in this current implementation, there may be memory issues encountered if the tableaus become too large. Another issue is that to test if a value is an integer, I check if the value is within 1e-7 of a whole number, so if the values in these problems are very small, this may lead to incorrect answers. Finally, there may be issues with overflow in general if numbers are too small as solving these types of problems involves division.
+Linear programming and transportation setup problems should be reliably solved using this calculator (or the calculator will return an error if there are no solutions), but problems involving variables that are restricted to integers may lead to some errors. Since integer programming is NP-hard, lots of computation is needed to solve many of these problems, and in this current implementation, there may be memory issues encountered if the tableaus become too large. Another issue is that floating point arithmetic leads to some integers being reported as numbers with a decimal component, which means that the calculator will likely miss the optimal solution in these cases. Finally, there may be issues with overflow in general if numbers are too small as solving these types of problems involves division.
